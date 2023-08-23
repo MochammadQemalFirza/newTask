@@ -36,7 +36,75 @@
         </div>
     </nav>
     <div class="container  bg-light rounded-4 m-auto p-5 mt-5 mb-5 w-50">
-        <div class="top">
+        <h2 class="text-center">Add My Project</h2>
+        <form>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" aria-describedby="emailHelp">
+            </div>
+
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col">
+                        <label for="startdate" class="form-label">Start Date</label>
+                        <input type="date" class="form-control" placeholder="First name" aria-label="First name"
+                            id="startdate">
+                    </div>
+                    <div class="col">
+                        <label for="enddate" class="form-label">End Date</label>
+                        <input type="date" class="form-control" placeholder="Last name" aria-label="Last name"
+                            id="enddate">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea class="form-control" id="content" style="height: 200px; resize: none"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label ">Technologies</label>
+                <div class="d-flex">
+                    <div class=" form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Javascript
+                        </label>
+                    </div>
+                    <div class="form-check" style="margin-left: 200px;">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            NodeJS
+                        </label>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class=" form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            ExpressJS
+                        </label>
+                    </div>
+                    <div class="form-check" style="margin-left: 200px;">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label" for="flexCheckChecked">
+                            ReactJS
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="uploadimage" class="form-label">Upload Image</label>
+                <input type="file" class="form-control" id="uploadimage" aria-describedby="inputGroupFileAddon04"
+                    aria-label="Upload">
+            </div>
+
+            <div class="d-flex justify-content-end mt-5">
+                <button type="submit" class="btn btn-danger px-5 py-3">Submit</button>
+            </div>
+        </form>
+        <!-- <div class="top">
             <div class="project">
                 <div class="project-form">
                     <div class="form-container">
@@ -94,7 +162,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
 

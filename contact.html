@@ -35,8 +35,42 @@
             </div>
         </div>
     </nav>
-    <section class="container  bg-light rounded-4 m-auto p-5 mt-5 mb-5 w-50">
+    <div class="container bg-dark-subtle rounded-4 m-auto p-5 mt-5 mb-5 w-50">
+        <h2 class="text-center">Get In Touch</h2>
         <form>
+            <div class="mb-3 ">
+                <label for="title" class="form-label fs-4">Name</label>
+                <input type="text" class="form-control border border-black" id="title">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label fs-4">Email</label>
+                <input type="email" class="form-control border border-black" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label fs-4">Your Phone</label>
+                <input type="number" class="form-control border border-black" id="phone">
+            </div>
+            <div class="mb-3">
+                <label class="form-label fs-4" for="inputGroupSelect01">Subject</label>
+                <select class="form-select border border-black fs-4" id="inputGroupSelect01">
+                    <option selected hidden>Choose...</option>
+                    <option value="1. Ngoding">1. Ngoding</option>
+                    <option value="2. Desain">2. Desain</option>
+                    <option value="3. Healing">3. Healing</option>
+                    <option value="3. Mukbang">3. Mukbang</option>
+                    <option value="3. Turu">4. Turu</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label fs-4">Message</label>
+                <textarea class="form-control border border-black" id="content"
+                    style="height: 200px; resize: none"></textarea>
+            </div>
+            <div class="d-flex justify-content-end mt-5">
+                <button type="submit" class="btn btn-danger p-2 fs-4 btn-sm">Submit</button>
+            </div>
+        </form>
+        <!-- <form>    
             <center>
                 <h1 style=" text-align: center;
         margin-bottom: 40px;">GET IN TOUCH</h1>
@@ -71,8 +105,8 @@
             <div style="text-align: end;">
                 <button class="button" type="button" onclick="submitData()">Submit</button>
             </div>
-        </form>
-    </section>
+        </form> -->
+    </div>
 
     <script src="js/contact.js"></script>
 </body>
