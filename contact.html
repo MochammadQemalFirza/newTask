@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/contact.css" />
+    <link rel="icon" type="image" href="assets/logo.png" />
+    <title>Contact</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-left">
+            <ul>
+                <li>
+                    <img src=assets/logo.png alt="" />
+                </li>
+                <li class="item-collapse">
+                    <a href="index.html" style="text-decoration: none;color: black;">Home</a>
+                </li>
+                <li class="item-collapse">
+                    <a href="project.html" style="text-decoration: none;color: black;">My Project</a>
+                </li>
+                <li class="item-collapse">
+                    <a href="testimonials.html" style="text-decoration: none;color:black;">Testimonials</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-right item-collapse">
+            <a href="contact.html" style="text-decoration: none;">Contact</a>
+        </div>
+        <div class="nav-right" id="barsmenu">
+            <button style="background-color: transparent; border: none; cursor: pointer" onclick="openHamburger();">
+                <i class="fa-2x fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="hamburger-nav-container" id="hamburger-nav-container">
+        <a href="index.html">Home</a>
+        <a href="project.html">My Project</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html" class="hamburger-active">Contact</a>
+    </div>
+    <section>
+        <form>
+            <center>
+                <h1 style=" text-align: center;
+        margin-bottom: 40px;">GET IN TOUCH</h1>
+            </center>
+            <div>
+                <label for="input-name">Name</label>
+                <input type="text" id="input-name">
+            </div>
+            <div>
+                <label for="input-email">Email</label>
+                <input type="email" required id="input-email">
+            </div>
+            <div>
+                <label for="input-phone">Your Phone</label>
+                <input type="number" name="" id="input-phone">
+            </div>
+            <div>
+                <label for="input-pilih">Subject</label>
+                <select name="Pilih" id="input-pilih">
+                    <option value="" hidden>Select</option>
+                    <option value="ngoding">1. ngoding</option>
+                    <option value="desain">2. desain</option>
+                    <option value="motoran">3. motoran</option>
+                    <option value="mukbang">4. mukbang</option>
+                    <option value="turu">5. turu</option>
+                </select>
+            </div>
+            <div>
+                <label for="input-message">Message</label>
+                <textarea name="" id="input-message" cols="30" rows="4" maxlength="50"></textarea>
+            </div>
+            <div style="text-align: end;">
+                <button class="button" type="button" onclick="submitData()">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <script src="js/contact.js"></script>
+</body>
+
+</html>

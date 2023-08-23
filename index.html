@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" type="image" href="assets/logo.png" />
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-left">
+            <ul>
+                <li>
+                    <img src=assets/logo.png alt="" />
+                </li>
+                <li class="item-collapse">
+                    <a href="index.html" class="active" style="text-decoration: none;">Home</a>
+                </li>
+                <li class="item-collapse">
+                    <a href="project.html" style="text-decoration: none;color: black;">My Project</a>
+                </li>
+                <li class="item-collapse">
+                    <a href="testimonials.html" style="text-decoration: none;color:black">Testimonials</a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-right item-collapse">
+            <a href="contact.html" style="text-decoration: none;">Contact</a>
+        </div>
+        <div class="nav-right" id="barsmenu">
+            <button style="background-color: transparent; border: none; cursor: pointer" onclick="openHamburger();">
+                <i class="fa-2x fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="hamburger-nav-container" id="hamburger-nav-container">
+        <a href="index.html" class="hamburger-active">Home</a>
+        <a href="project.html">My Project</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="container">
+        <section>
+            <div class="left">
+                <p style="font-size: 39px;margin-top: 30px;"><strong>Welcome To My Hut</strong></p>
+                <p style="text-align: justify;margin-bottom: 10px;" class="font-size: 20px">Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Maxime mollitia,
+                    molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                    numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+                    optio, eaque rerum! Provident similique accusantium nemo autem.
+                </p>
+                <div class="about-me">
+                    <div class="contact">
+                        <a href="contact.html" style=" text-decoration: none;  color: white;">Contact</a>
+                    </div>
+                    <div class="download">
+                        <a href="https://drive.google.com/file/d/1sobOpfrV3Dw21ldZ_M5bCBMszj_rScZs/view?usp=sharing"
+                            style="text-decoration: none;color: black;">
+                            download CV <i class="fa-solid fa-download"></i></a>
+                    </div>
+                </div>
+                <br>
+                <div style="display: flex; margin-top: 20px; margin-left: -15px;">
+                    <a href="https://www.linkedin.com/in/mochammad-qemal-firza-9aa351233">
+                        <i class="fa-brands fa-linkedin fa-2xl" style="margin-left: 15px; color: black;"></i>
+                    </a>
+                    <a href="https://www.facebook.com/cemal.firza1/">
+                        <i class="fa-brands fa-facebook fa-2xl" style="margin-left: 15px; color: black;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/qemal_firza/">
+                        <i class="fa-brands fa-instagram fa-2xl" style="margin-left: 15px; color: black;"></i>
+                    </a>
+                    <a href="https://github.com/MochammadQemalFirza">
+                        <i class="fa-brands fa-github fa-2xl" style="margin-left: 15px; color: black;"></i>
+                    </a>
+                </div>
+
+            </div>
+            <div class="right">
+                <img style="width: 100%; border-radius: 10px 10px 0 0;" src="assets/image.jpeg" alt="gambar gwej" />
+                <p style="text-align: center;"><strong>Mochammad Qemal Firza</strong></p>
+                <p style="text-align: center;">BackEnd Developer</p>
+            </div>
+    </div>
+    </section>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
