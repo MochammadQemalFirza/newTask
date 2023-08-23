@@ -13,62 +13,52 @@
     <title>Home</title>
 </head>
 
-<body>
-    <nav>
-        <div class="nav-left">
-            <ul>
-                <li>
-                    <img src=assets/logo.png alt="" />
-                </li>
-                <li class="item-collapse">
-                    <a href="index.html" class="active" style="text-decoration: none;">Home</a>
-                </li>
-                <li class="item-collapse">
-                    <a href="project.html" style="text-decoration: none;color: black;">My Project</a>
-                </li>
-                <li class="item-collapse">
-                    <a href="testimonials.html" style="text-decoration: none;color:black">Testimonials</a>
-                </li>
-            </ul>
-        </div>
-        <div class="nav-right item-collapse">
-            <a href="contact.html" style="text-decoration: none;">Contact</a>
-        </div>
-        <div class="nav-right" id="barsmenu">
-            <button style="background-color: transparent; border: none; cursor: pointer" onclick="openHamburger();">
-                <i class="fa-2x fa-solid fa-bars"></i>
+<body style="background-image: url(https://i.pinimg.com/564x/f1/30/02/f1300267a572d0f9269b3f443fe33c62.jpg);">
+    <nav class="navbar navbar-expand-lg bg-body-secondary">
+        <div class="container-fluid">
+            <img src=assets/logo.png alt="" />
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item ps-5 pe-3">
+                        <a class="nav-link active fs-4 text-danger" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-4" href="project.html">My Project</a>
+                    </li>
+                </ul>
+                <a class="btn btn-danger fs-4" href="contact.html">Contact</a>
+            </div>
         </div>
     </nav>
-    <div class="hamburger-nav-container" id="hamburger-nav-container">
-        <a href="index.html" class="hamburger-active">Home</a>
-        <a href="project.html">My Project</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html">Contact</a>
-    </div>
-    <div class="container">
-        <section>
-            <div class="left">
-                <p style="font-size: 39px;margin-top: 30px;"><strong>Welcome To My Hut</strong></p>
-                <p style="text-align: justify;margin-bottom: 10px;" class="font-size: 20px">Lorem ipsum dolor sit amet
+    <!-- bodyContent -->
+    <div class="container bg-light rounded-4 m-auto p-5 mt-5 mb-5 w-75">
+        <section class="d-flex flex-row ">
+            <div class="left pe-5">
+                <p class="fw-bold fs-1">Welcome To My Hut</p>
+                <p class="fs-5" style="text-align: justify;">Lorem ipsum dolor sit amet
                     consectetur adipisicing elit.
                     Maxime mollitia,
                     molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
                     numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
                     optio, eaque rerum! Provident similique accusantium nemo autem.
                 </p>
-                <div class="about-me">
-                    <div class="contact">
-                        <a href="contact.html" style=" text-decoration: none;  color: white;">Contact</a>
+                <div class="d-flex flex-row">
+                    <div class="me-2">
+                        <a class="btn btn-danger text-white text-decoration-none" href="contact.html">Contact</a>
                     </div>
-                    <div class="download">
+                    <div class="m-1">
                         <a href="https://drive.google.com/file/d/1sobOpfrV3Dw21ldZ_M5bCBMszj_rScZs/view?usp=sharing"
                             style="text-decoration: none;color: black;">
-                            download CV <i class="fa-solid fa-download"></i></a>
+                            download CV <i class="fa-solid fa-download "></i></a>
                     </div>
                 </div>
                 <br>
-                <div style="display: flex; margin-top: 20px; margin-left: -15px;">
+                <div class="d-flex mt-2" style="margin-left: -15px;">
                     <a href="https://www.linkedin.com/in/mochammad-qemal-firza-9aa351233">
                         <i class="fa-brands fa-linkedin fa-2xl" style="margin-left: 15px; color: black;"></i>
                     </a>
@@ -82,15 +72,83 @@
                         <i class="fa-brands fa-github fa-2xl" style="margin-left: 15px; color: black;"></i>
                     </a>
                 </div>
-
             </div>
-            <div class="right">
-                <img style="width: 100%; border-radius: 10px 10px 0 0;" src="assets/image.jpeg" alt="gambar gwej" />
-                <p style="text-align: center;"><strong>Mochammad Qemal Firza</strong></p>
-                <p style="text-align: center;">BackEnd Developer</p>
+            <div class="right bg-light rounded-4 " style="box-shadow:0 0 20px #666666;">
+                <img class="img-fluid rounded-top" src="assets/image.jpeg" alt="gambar gwej" />
+                <p class="text-center fw-bold mt-2">Mochammad Qemal Firza</p>
+                <p class="text-center">BackEnd Developer</p>
             </div>
+        </section>
     </div>
-    </section>
+    <!-- myProject -->
+    <div class=" bg-body-secondary p-3 ">
+        <h1 class="fw-bold text-center">MY PROJECT</h1>
+    </div>
+    <div class="d-flex bg-body-secondary p-5 align-items-center">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100 w-75 m-auto me-2" style="box-shadow:0 0 20px #666666;">
+                    <img src="assets/Smiley Face Decor_ Home & Kitchen (1).jpeg"
+                        class="card-img-top h-50 p-3 rounded-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mobile Developer</h5>
+                        <p class="card-text" style="text-align: justify;">This card has supporting text
+                            below as a
+                            natural lead-in to additional
+                            content.</p>
+                    </div>
+                    <div class="ms-3 mb-3">
+                        <i class="fa-brands fa-google-play fa-lg"></i>
+                        <i class="fa-brands fa-android fa-lg"></i>
+                        <i class="fa-brands fa-java fa-lg"></i>
+                    </div>
+                    <div class="d-flex justify-content-center mb-3">
+                        <button class="rounded-3 w-25 btn btn-secondary">Edit</button>
+                        <button class="ms-1 rounded-3 w-25 btn btn-secondary">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 w-75 m-auto" style="box-shadow:0 0 20px #666666;">
+                    <img src="assets/Money Vision Board.jpeg" class="card-img-top h-50 p-3 rounded-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">FrontEnd Developer</h5>
+                        <p class="card-text" style="text-align: justify;">This card has supporting text below as a
+                            natural lead-in to additional
+                            content.</p>
+                    </div>
+                    <div class="ms-3 mb-3">
+                        <i class="fa-brands fa-react fa-lg"></i>
+                        <i class="fa-brands fa-square-js"></i>
+                    </div>
+                    <div class="d-flex justify-content-center mb-3">
+                        <button class="rounded-3 w-25 btn btn-secondary">Edit</button>
+                        <button class="ms-1 rounded-3 w-25 btn btn-secondary">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 w-75 m-auto ms-2" style="box-shadow:0 0 20px #666666;">
+                    <img src="assets/DIRTYPOTE - Illustration - Copa banana.jpeg"
+                        class="card-img-top h-50 p-3 rounded-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">BackEnd Developer</h5>
+                        <p class="card-text" style="text-align: justify;">This card has supporting text below as a
+                            natural lead-in to additional
+                            content.</p>
+                    </div>
+                    <div class="ms-3 mb-3">
+                        <i class="fa-brands fa-golang"></i>
+                        <i class="fa-solid fa-database"></i>
+                        <i class="fa-brands fa-docker"></i>
+                    </div>
+                    <div class="d-flex justify-content-center mb-3">
+                        <button class="rounded-3 w-25 btn btn-secondary">Edit</button>
+                        <button class="ms-1 rounded-3 w-25 btn btn-secondary">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="js/index.js"></script>
 </body>

@@ -13,40 +13,29 @@
     <title>Creating Project</title>
 </head>
 
-<body>
-    <nav>
-        <div class="nav-left">
-            <ul>
-                <li>
-                    <img src=assets/logo.png alt="" />
-                </li>
-                <li class="item-collapse">
-                    <a href="index.html" style="text-decoration: none;color: black;">Home</a>
-                </li>
-                <li class="item-collapse">
-                    <a href="project.html" class="active" style="text-decoration: none;">My Project</a>
-                </li>
-                <li class="item-collapse">
-                    <a href="testimonials.html" style="text-decoration: none;color:black">Testimonials</a>
-                </li>
-            </ul>
-        </div>
-        <div class="nav-right item-collapse">
-            <a href="contact.html" style="text-decoration: none;">Contact</a>
-        </div>
-        <div class="nav-right" id="barsmenu">
-            <button style="background-color: transparent; border: none; cursor: pointer" onclick="openHamburger();">
-                <i class="fa-2x fa-solid fa-bars"></i>
+<body style="background-image: url(https://i.pinimg.com/564x/f1/30/02/f1300267a572d0f9269b3f443fe33c62.jpg);">
+    <nav class="navbar navbar-expand-lg bg-body-secondary">
+        <div class="container-fluid">
+            <img src=assets/logo.png alt="" />
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item ps-5 pe-3">
+                        <a class="nav-link fs-4 " aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  active fs-4 text-danger" href="project.html">My Project</a>
+                    </li>
+                </ul>
+                <a class="btn btn-danger fs-4" href="contact.html">Contact</a>
+            </div>
         </div>
     </nav>
-    <div class="hamburger-nav-container" id="hamburger-nav-container">
-        <a href="index.html">Home</a>
-        <a href="project.html" class="hamburger-active">My Project</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html">Contact</a>
-    </div>
-    <div class="container">
+    <div class="container  bg-light rounded-4 m-auto p-5 mt-5 mb-5 w-50">
         <div class="top">
             <div class="project">
                 <div class="project-form">
@@ -102,96 +91,6 @@
                                 <button onclick="submitProject(event)" type="button">Submit</button>
                             </div>
                         </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bottom">
-            <div class="header-project">
-                <h1 align="center">MY PROJECT</h1>
-            </div>
-            <div class="project-list" id="content">
-                <div class="project-list-item" id="content">
-                    <div class="project-image">
-                        <img style="width: 100%; border-radius: 10px 10px 0 0;"
-                            src="assets/Smiley Face Decor_ Home & Kitchen (1).jpeg" alt="" />
-                    </div>
-                    <div class="title-content">
-                        <a href="project_detail.html">
-                            <p style="font-size: 25px;text-align: left ; margin: 0px;"><strong>Mobile App
-                                    Developer</strong></p>
-                        </a>
-                        <p style="font-size: 20px;margin: 0px">Durasi : 5 bulan</p>
-                    </div>
-                    <div class="project-content">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at feugiat neque, eget rutrum
-                            erat.
-                        </p>
-                    </div>
-                    <div class="logo">
-                        <i class="fa-brands fa-google-play fa-lg"></i>
-                        <i class="fa-brands fa-android fa-lg"></i>
-                        <i class="fa-brands fa-java fa-lg"></i>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn-edit">Edit </button>
-                        <button class="btn-post">Delete </button>
-                    </div>
-                </div>
-                <div class="project-list-item">
-                    <div class="project-image">
-                        <img style="width: 100%; border-radius: 10px 10px 0 0;" src="assets/Money Vision Board.jpeg"
-                            alt="" />
-                    </div>
-                    <div class="title-content">
-                        <a href="project_detail.html">
-                            <p style="font-size: 25px;text-align: left ;margin: 0px"><strong>FrontEnd Developer</strong>
-                            </p>
-                        </a>
-                        <p style="font-size: 20px;margin: 0px">Durasi : 3 bulan</p>
-                    </div>
-                    <div class="project-content">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at feugiat neque, eget rutrum
-                            erat.
-                        </p>
-                    </div>
-                    <div class="logo">
-                        <i class="fa-brands fa-react fa-lg"></i>
-                        <i class="fa-brands fa-square-js"></i>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn-edit">Edit</button>
-                        <button class="btn-post">Delete</button>
-                    </div>
-                </div>
-                <div class="project-list-item">
-                    <div class="project-image">
-                        <img style="width: 100%; border-radius: 10px 10px 0 0;"
-                            src="assets/DIRTYPOTE - Illustration - Copa banana.jpeg" alt="" />
-                    </div>
-                    <div class="title-content">
-                        <a href="project_detail.html">
-                            <p style="font-size: 25px;text-align: left;margin: 0px"><strong>BackEnd Developer</strong>
-                            </p>
-                        </a>
-                        <p style="font-size: 20px;margin: 0px">Durasi : 1 Tahun</p>
-                    </div>
-                    <div class="project-content">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at feugiat neque, eget rutrum
-                            erat.
-                        </p>
-                    </div>
-                    <div class="logo">
-                        <i class="fa-brands fa-golang"></i>
-                        <i class="fa-solid fa-database"></i>
-                        <i class="fa-brands fa-docker"></i>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn-edit">Edit</button>
-                        <button class="btn-post">Delete</button>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <link rel="icon" type="image" href="assets/logo.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -9,43 +10,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image" href="assets/logo.png" />
     <title>Contact</title>
 </head>
 
-<body>
-    <nav>
-        <div class="nav-left">
-            <ul>
-                <li>
-                    <img src=assets/logo.png alt="" />
-                </li>
-                <li class="item-collapse">
-                    <a href="index.html" style="text-decoration: none;color: black;">Home</a>
-                </li>
-                <li class="item-collapse">
-                    <a href="project.html" style="text-decoration: none;color: black;">My Project</a>
-                </li>
-                <li class="item-collapse">
-                    <a href="testimonials.html" style="text-decoration: none;color:black;">Testimonials</a>
-                </li>
-            </ul>
-        </div>
-        <div class="nav-right item-collapse">
-            <a href="contact.html" style="text-decoration: none;">Contact</a>
-        </div>
-        <div class="nav-right" id="barsmenu">
-            <button style="background-color: transparent; border: none; cursor: pointer" onclick="openHamburger();">
-                <i class="fa-2x fa-solid fa-bars"></i>
+<body style="background-image: url(https://i.pinimg.com/564x/f1/30/02/f1300267a572d0f9269b3f443fe33c62.jpg);">
+    <nav class="navbar navbar-expand-lg bg-body-secondary">
+        <div class="container-fluid">
+            <img src=assets/logo.png alt="" />
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item ps-5 pe-3">
+                        <a class="nav-link fs-4 " aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  fs-4 " href="project.html">My Project</a>
+                    </li>
+                </ul>
+                <a class="btn btn-danger fs-4" href="contact.html">Contact</a>
+            </div>
         </div>
     </nav>
-    <div class="hamburger-nav-container" id="hamburger-nav-container">
-        <a href="index.html">Home</a>
-        <a href="project.html">My Project</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html" class="hamburger-active">Contact</a>
-    </div>
     <section>
         <form>
             <center>
