@@ -53,3 +53,4 @@ function projectDetail(req, res) {
 
   res.render("project_detail", { data });
 }
+module.exports = app;
