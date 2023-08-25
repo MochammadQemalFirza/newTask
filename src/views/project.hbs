@@ -58,12 +58,13 @@
     </nav>
     <div class="container bg-light rounded-4 m-auto p-5 mt-5 mb-5 w-50">
       <h2 class="text-center fs-4">Add My Project</h2>
-      <form>
+      <form method="post" action="project">
         <div class="mb-3">
           <label for="title" class="form-label fs-4">Title</label>
           <input
             type="text"
-            class="form-control"
+            class="form-control border border-black"
+            name="title"
             id="title"
             aria-describedby="emailHelp"
           />
@@ -72,23 +73,25 @@
         <div class="mb-3">
           <div class="row">
             <div class="col">
-              <label for="startdate" class="form-label fs-4">Start Date</label>
+              <label for="startDate" class="form-label fs-4">Start Date</label>
               <input
                 type="date"
-                class="form-control"
+                class="form-control border border-black"
                 placeholder="First name"
                 aria-label="First name"
-                id="startdate"
+                name="startDate"
+                id="startDate"
               />
             </div>
             <div class="col">
-              <label for="enddate" class="form-label fs-4">End Date</label>
+              <label for="endDate" class="form-label fs-4">End Date</label>
               <input
                 type="date"
-                class="form-control"
+                class="form-control border border-black"
                 placeholder="Last name"
                 aria-label="Last name"
-                id="enddate"
+                name="endDate"
+                id="endDate"
               />
             </div>
           </div>
@@ -97,8 +100,9 @@
         <div class="mb-3">
           <label for="content" class="form-label fs-4">Content</label>
           <textarea
-            class="form-control"
+            class="form-control border border-black"
             id="content"
+            name="content"
             style="height: 200px; resize: none"
           ></textarea>
         </div>
@@ -158,7 +162,7 @@
           <label for="uploadimage" class="form-label fs-4">Upload Image</label>
           <input
             type="file"
-            class="form-control"
+            class="form-control border border-black"
             id="uploadimage"
             aria-describedby="inputGroupFileAddon04"
             aria-label="Upload"

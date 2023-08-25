@@ -71,8 +71,11 @@
           />
         </div>
         <div class="right">
-          <h1>{{data.title}}</h1>
-          <div class="author mb-3">3 Tahun | Mochammad Qemal Firza </div>
+          <h1 class="mb-5">{{data.title}}</h1>
+          <p class="mb-2">{{data.postedAt}}</p>
+          <div class="author mb-3">{{data.startDate}}-{{data.endDate}}
+            | Mochammad Qemal Firza
+          </div>
           <p style="text-align: justify;">
             {{data.content}}
           </p>
