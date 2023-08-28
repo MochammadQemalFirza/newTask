@@ -18,6 +18,10 @@ const dataBlog = [
     title: "Mobile Developer",
     startDate: "2019-06-08",
     endDate: "2020-06-09",
+    Java: true,
+    NodeJS: false,
+    Golang: false,
+    ReactJS: false,
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
     postedAt: new Date(),
@@ -26,6 +30,10 @@ const dataBlog = [
     title: "FrontEnd Developer",
     startDate: "2022-01-5",
     endDate: "2023-02-03",
+    Java: false,
+    NodeJS: false,
+    Golang: false,
+    ReactJS: true,
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
     postedAt: new Date(),
@@ -34,6 +42,10 @@ const dataBlog = [
     title: "BackEnd Developer",
     startDate: "2021-01-06",
     endDate: "2023-02-01",
+    Java: false,
+    NodeJS: true,
+    Golang: true,
+    ReactJS: false,
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
     postedAt: new Date(),
@@ -66,7 +78,8 @@ function contactMe(req, res) {
 }
 
 function addProject(req, res) {
-  const { title, content, startDate, endDate } = req.body;
+  const { title, content, startDate, endDate, Java, NodeJS, Golang, ReactJS } =
+    req.body;
 
   const durasi = getDurasi(startDate, endDate);
 
@@ -75,6 +88,10 @@ function addProject(req, res) {
     content,
     startDate,
     endDate,
+    Java,
+    NodeJS,
+    Golang,
+    ReactJS,
     durasi,
     author: "Mochammad Qemal Firza",
     postedAt: new Date(),
@@ -107,7 +124,8 @@ function editProject(req, res) {
 function updateProject(req, res) {
   const id = req.params;
   const projectIndex = dataBlog.findIndex((project) => project.id === id);
-  const { title, content, startDate, endDate } = req.body;
+  const { title, content, startDate, endDate, Java, NodeJS, Golang, ReactJS } =
+    req.body;
 
   const durasi = getDurasi(startDate, endDate);
 
@@ -117,6 +135,10 @@ function updateProject(req, res) {
     startDate,
     endDate,
     durasi,
+    Java,
+    NodeJS,
+    Golang,
+    ReactJS,
     author: "Mochammad Qemal Firza",
     postedAt: new Date(),
   };
