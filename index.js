@@ -3,6 +3,11 @@ const app = express();
 const PORT = 5000;
 const path = require("path");
 
+// sequelize init
+const config = require("./src/config/config.json");
+const { Sequelize, QueryTypes } = require("sequelize");
+const sequelize = new Sequelize(config.development);
+
 // setup call hbs with sub folder
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "src/views"));
@@ -13,44 +18,44 @@ app.use(express.static("src/assets"));
 // parsing data from client
 app.use(express.urlencoded({ extended: false }));
 
-const dataBlog = [
-  {
-    title: "Mobile Developer",
-    startDate: "2019-06-08",
-    endDate: "2020-06-09",
-    Java: true,
-    NodeJS: false,
-    Golang: false,
-    ReactJS: false,
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
-    postedAt: new Date(),
-  },
-  {
-    title: "FrontEnd Developer",
-    startDate: "2022-01-5",
-    endDate: "2023-02-03",
-    Java: false,
-    NodeJS: false,
-    Golang: false,
-    ReactJS: true,
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
-    postedAt: new Date(),
-  },
-  {
-    title: "BackEnd Developer",
-    startDate: "2021-01-06",
-    endDate: "2023-02-01",
-    Java: false,
-    NodeJS: true,
-    Golang: true,
-    ReactJS: false,
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
-    postedAt: new Date(),
-  },
-];
+// const dataBlog = [
+//   {
+//     title: "Mobile Developer",
+//     startDate: "2019-06-08",
+//     endDate: "2020-06-09",
+//     Java: true,
+//     NodeJS: false,
+//     Golang: false,
+//     ReactJS: false,
+//     content:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
+//     postedAt: new Date(),
+//   },
+//   {
+//     title: "FrontEnd Developer",
+//     startDate: "2022-01-5",
+//     endDate: "2023-02-03",
+//     Java: false,
+//     NodeJS: false,
+//     Golang: false,
+//     ReactJS: true,
+//     content:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
+//     postedAt: new Date(),
+//   },
+//   {
+//     title: "BackEnd Developer",
+//     startDate: "2021-01-06",
+//     endDate: "2023-02-01",
+//     Java: false,
+//     NodeJS: true,
+//     Golang: true,
+//     ReactJS: false,
+//     content:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
+//     postedAt: new Date(),
+//   },
+// ];
 // routing
 app.get("/", home);
 app.get("/contact", contactMe);
@@ -65,8 +70,19 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-function home(req, res) {
-  res.render("index", { dataBlog });
+async function home(req, res) {
+  try {
+    const query = `SELECT * FROM "Projects";`;
+    let obj = await sequelize.query(query, { type: QueryTypes.SELECT });
+
+    const data = obj.map((res) => ({
+      ...res,
+      author: "Mochammad Qemal Firza",
+    }));
+    res.render("index", { dataBlog: data });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function formProject(req, res) {
@@ -178,8 +194,8 @@ function getDurasi(startDate, endDate) {
   return durasi;
 }
 
-dataBlog.forEach((blog) => {
-  blog.durasi = getDurasi(blog.startDate, blog.endDate);
-});
+// dataBlog.forEach((project) => {
+//   project.duration = getDurasi(project.startDate, project.endDate);
+// });
 
 module.exports = app;
