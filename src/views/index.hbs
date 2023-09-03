@@ -141,19 +141,20 @@
         <div class="col">
           <div class="card m-auto mb-5" style="box-shadow:0 0 20px #666666;">
             <img
-              src="images/Smiley Face Decor_ Home & Kitchen (1).jpeg"
-              class="card-img-top h-50 p-3 rounded-top"
+              src="{{this.image}}"
+              class="card-img-top p-3 rounded-top"
+              style="height:500px; object-fit: cover"
               alt="..."
             />
             <div class="card-body">
               <h5 class="card-title">
                 <a
                   class="text-decoration-none text-black m-0 p-0 fs-3"
-                  href="/project-detail/{{@index}}"
+                  href="/project-detail/{{this.id}}"
                 >{{this.title}}</a>
               </h5>
               <p class="card-text">{{this.postedAt}}</p>
-              <p class="card-text">{{this.durasi}}</p>
+              <p class="card-text">{{this.duration}}</p>
               <p
                 class="card-text"
                 style="text-align: justify;"

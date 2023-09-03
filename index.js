@@ -74,12 +74,7 @@ async function home(req, res) {
   try {
     const query = `SELECT * FROM "Projects";`;
     let obj = await sequelize.query(query, { type: QueryTypes.SELECT });
-
-    const data = obj.map((res) => ({
-      ...res,
-      author: "Mochammad Qemal Firza",
-    }));
-    res.render("index", { dataBlog: data });
+    res.render("index", { dataBlog: obj });
   } catch (error) {
     console.log(error);
   }
@@ -93,36 +88,38 @@ function contactMe(req, res) {
   res.render("contact");
 }
 
-function addProject(req, res) {
-  const { title, content, startDate, endDate, Java, NodeJS, Golang, ReactJS } =
-    req.body;
+async function addProject(req, res) {
+  try {
+    const { title, content, startDate, endDate } = req.body;
+    const image =
+      "https://i.pinimg.com/564x/64/60/fc/6460fcd2c440c95b32358ddf2dbb6570.jpg";
 
-  const durasi = getDurasi(startDate, endDate);
+    await sequelize.query(
+      `INSERT INTO "Projects" (title, content, image, duration, "createdAt", "updatedAt", "startDate", "endDate", "postedAt") VALUES ('${title}', '${content}', '${image}', '${duration(
+        startDate,
+        endDate
+      )}',NOW(), NOW(), '${startDate}', '${endDate}', NOW())`
+    );
 
-  const data = {
-    title,
-    content,
-    startDate,
-    endDate,
-    Java,
-    NodeJS,
-    Golang,
-    ReactJS,
-    durasi,
-    author: "Mochammad Qemal Firza",
-    postedAt: new Date(),
-  };
-  // console.log(title, content, startDate, endDate);
-
-  dataBlog.push(data);
-  console.log(durasi);
-  res.redirect("/");
+    res.redirect("/");
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function projectDetail(req, res) {
-  const { id } = req.params;
-
-  res.render("project_detail", { data: dataBlog[id] });
+async function projectDetail(req, res) {
+  try {
+    const { id } = req.params;
+    const query = `SELECT * FROM "Projects" WHERE id='${id}';`;
+    let obj = await sequelize.query(query, { type: QueryTypes.SELECT });
+    const dataBlog = obj.map((res) => ({
+      ...res,
+      author: "Mochammad Qemal Firza",
+    }));
+    res.render("project_detail", { data: dataBlog[0] });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function deleteProject(req, res) {
@@ -143,7 +140,7 @@ function updateProject(req, res) {
   const { title, content, startDate, endDate, Java, NodeJS, Golang, ReactJS } =
     req.body;
 
-  const durasi = getDurasi(startDate, endDate);
+  const durasi = durasi(startDate, endDate);
 
   const data = {
     title,
@@ -163,7 +160,7 @@ function updateProject(req, res) {
   res.redirect("/");
 }
 
-function getDurasi(startDate, endDate) {
+function duration(startDate, endDate) {
   let start = new Date(startDate);
   let end = new Date(endDate);
   if (start > end) {

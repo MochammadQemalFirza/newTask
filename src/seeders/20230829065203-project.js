@@ -11,6 +11,7 @@ module.exports = {
           startDate: "2019-06-08",
           endDate: "2020-06-09",
           techStack: ["Java", "NodeJS", "Golang", "ReactJS"],
+          duration: "1 year",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
           postedAt: new Date(),
@@ -22,6 +23,7 @@ module.exports = {
           startDate: "2022-01-5",
           endDate: "2023-02-03",
           techStack: ["Java", "NodeJS", "Golang", "ReactJS"],
+          duration: "1 year",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
           postedAt: new Date(),
@@ -33,6 +35,7 @@ module.exports = {
           startDate: "2021-01-06",
           endDate: "2023-02-01",
           techStack: ["NodeJS", "Golang"],
+          duration: "1 year",
           content:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien ante, dapibus sed massa eu, ultrices bibendum sapien. Morbi eleifend ex non tortor ultrices, vel congue risus fermentum.",
           postedAt: new Date(),
