@@ -58,7 +58,7 @@
     </nav>
     <div class="container bg-light rounded-4 m-auto p-5 mt-5 mb-5 w-50">
       <h2 class="text-center fs-4">Update My Project</h2>
-      <form method="post" action="edit_project">
+      <form method="post" action="/edit-project/{{data.id}}">
         <div class="mb-3">
           <label for="title" class="form-label fs-4"></label>
           <input
@@ -82,6 +82,7 @@
                 aria-label="First name"
                 name="startDate"
                 id="startDate"
+                value="{{data.startDate}}"
               />
             </div>
             <div class="col">
@@ -93,6 +94,7 @@
                 aria-label="Last name"
                 name="endDate"
                 id="endDate"
+                value="{{data.endDate}}"
               />
             </div>
           </div>

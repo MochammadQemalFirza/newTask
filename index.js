@@ -122,41 +122,38 @@ async function projectDetail(req, res) {
   }
 }
 
-function deleteProject(req, res) {
+async function deleteProject(req, res) {
   const { id } = req.params;
+  const query = `DELETE FROM "Projects" WHERE id=${id}`;
 
-  dataBlog.splice(id, 1);
+  await sequelize.query(query);
+
   res.redirect("/");
 }
 
-function editProject(req, res) {
+async function editProject(req, res) {
   const { id } = req.params;
-  res.render("edit_project", { data: dataBlog[id] });
+  const query = `SELECT * FROM "Projects" WHERE id=${id}`;
+  let obj = await sequelize.query(query, { type: QueryTypes.SELECT });
+
+  const data = obj.map((item) => ({
+    ...item,
+  }));
+  res.render("edit_project", { data: data[0] });
 }
 
-function updateProject(req, res) {
-  const id = req.params;
-  const projectIndex = dataBlog.findIndex((project) => project.id === id);
+async function updateProject(req, res) {
+  const { id } = req.params;
   const { title, content, startDate, endDate, Java, NodeJS, Golang, ReactJS } =
     req.body;
 
-  const durasi = durasi(startDate, endDate);
-
-  const data = {
-    title,
-    content,
+  const query = `UPDATE "Projects" SET title='${title}', content='${content}', duration='${duration(
     startDate,
-    endDate,
-    durasi,
-    Java,
-    NodeJS,
-    Golang,
-    ReactJS,
-    author: "Mochammad Qemal Firza",
-    postedAt: new Date(),
-  };
+    endDate
+  )}', "updatedAt"=NOW(), "startDate"='${startDate}', "endDate"='${endDate}' WHERE id=${id}`;
 
-  dataBlog.splice(projectIndex, 1, data);
+  await sequelize.query(query);
+
   res.redirect("/");
 }
 

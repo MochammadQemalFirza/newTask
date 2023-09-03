@@ -157,7 +157,7 @@
               <p class="card-text">{{this.duration}}</p>
               <p
                 class="card-text"
-                style="text-align: justify;"
+                style="text-align: justify; height: 50px; overflow: hidden"
               >{{this.content}}</p>
             </div>
             <div class="ms-3 mb-3">
@@ -184,11 +184,11 @@
             </div>
             <div class="d-flex justify-content-center mb-3">
               <a
-                href="/edit-project/{{@index}}"
+                href="/edit-project/{{this.id}}"
                 class="rounded-3 w-25 btn btn-secondary"
               >Edit</a>
               <a
-                href="/delete-project/{{@index}}"
+                href="/delete-project/{{this.id}}"
                 class="ms-1 rounded-3 w-25 btn btn-secondary"
               >Delete</a>
             </div>
