@@ -5,6 +5,7 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const session = require("express-session");
 const flash = require("express-flash");
+const upload = require("./src/middlewares/uploadFiles");
 
 // sequelize init
 const config = require("./src/config/config.json");
@@ -17,6 +18,7 @@ app.set("views", path.join(__dirname, "src/views"));
 
 // set serving static file
 app.use(express.static("src/assets"));
+app.use(express.static("src/uploads"));
 
 // parsing data from client
 app.use(express.urlencoded({ extended: false }));
@@ -79,7 +81,7 @@ app.use(
 app.get("/", home);
 app.get("/contact", contactMe);
 app.get("/project-detail/:id", projectDetail);
-app.post("/project", addProject);
+app.post("/project", upload.single("uploadImage"), addProject);
 app.get("/project", formProject);
 app.get("/delete-project/:id", deleteProject);
 app.get("/edit-project/:id", editProject);
@@ -94,10 +96,15 @@ app.listen(PORT, () => {
 
 async function home(req, res) {
   try {
-    const query = `SELECT * FROM "Projects";`;
+    const query = `SELECT "Projects".id, title, content, image, duration, nodejs, golang, reactjs, java, "Users".name as author  FROM "Projects" left join "Users" on "Projects".author = "Users".id ;`;
     let obj = await sequelize.query(query, { type: QueryTypes.SELECT });
+    data = obj.map((datas) => ({
+      ...datas,
+      isLogin: req.session.isLogin,
+      user: req.session.user,
+    }));
     res.render("index", {
-      dataBlog: obj,
+      dataBlog: data,
       nameUser: req.session.user,
       isLogin: req.session.isLogin,
     });
@@ -117,15 +124,22 @@ function contactMe(req, res) {
 async function addProject(req, res) {
   try {
     const { title, content, startDate, endDate } = req.body;
-    const image =
-      "https://i.pinimg.com/564x/64/60/fc/6460fcd2c440c95b32358ddf2dbb6570.jpg";
-
-    await sequelize.query(
-      `INSERT INTO "Projects" (title, content, image, duration, "createdAt", "updatedAt", "startDate", "endDate", "postedAt") VALUES ('${title}', '${content}', '${image}', '${duration(
-        startDate,
-        endDate
-      )}',NOW(), NOW(), '${startDate}', '${endDate}', NOW())`
-    );
+    const author = req.session.idUser;
+    const image = req.file.filename;
+    console.log(image);
+    const query = `INSERT INTO "Projects" (title, content, image, duration, author, "createdAt", "updatedAt", "startDate", "endDate", "postedAt",nodejs,golang,reactjs, java) VALUES ('${title}', '${content}', '${image}', '${duration(
+      startDate,
+      endDate
+    )}', ${author}, NOW(), NOW(), '${startDate}', '${endDate}', NOW()), :nodejs, :golang, :reeactjs,:java`;
+    await sequelize.query(query, {
+      replacement: {
+        node: req.body.nodejs ? true : false,
+        golang: req.body.golang ? true : false,
+        react: req.body.react ? true : false,
+        js: req.body.javascript ? true : false,
+      },
+      type: QueryTypes.INSERT,
+    });
 
     res.redirect("/");
   } catch (error) {
@@ -136,11 +150,10 @@ async function addProject(req, res) {
 async function projectDetail(req, res) {
   try {
     const { id } = req.params;
-    const query = `SELECT * FROM "Projects" WHERE id='${id}';`;
+    const query = `SELECT "Projects".id, title, content, image, duration, "postedAt", "Users".name as author  FROM "Projects" left join "Users" on "Projects".author = "Users".id WHERE "Projects".id='${id}';`;
     let obj = await sequelize.query(query, { type: QueryTypes.SELECT });
     const dataBlog = obj.map((res) => ({
       ...res,
-      author: "Mochammad Qemal Firza",
     }));
     res.render("project_detail", { data: dataBlog[0] });
   } catch (error) {
@@ -222,6 +235,7 @@ async function userLogin(req, res) {
         res.redirect("/login");
       } else {
         req.session.isLogin = true;
+        req.session.idUser = obj[0].id;
         req.session.user = obj[0].name;
         req.flash("success", "Login Success");
         res.redirect("/");

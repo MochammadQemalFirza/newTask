@@ -58,7 +58,7 @@
     </nav>
     <div class="container bg-light rounded-4 m-auto p-5 mt-5 mb-5 w-50">
       <h2 class="text-center fs-4">Add My Project</h2>
-      <form method="post" action="project">
+      <form method="post" action="project" enctype="multipart/form-data">
         <div class="mb-3">
           <label for="title" class="form-label fs-4">Title</label>
           <input
@@ -163,9 +163,10 @@
           <input
             type="file"
             class="form-control border border-black"
-            id="uploadimage"
+            id="uploadImage"
             aria-describedby="inputGroupFileAddon04"
             aria-label="Upload"
+            name="uploadImage"
           />
         </div>
 

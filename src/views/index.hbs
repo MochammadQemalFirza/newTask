@@ -178,43 +178,45 @@
                 >{{this.title}}</a>
               </h5>
               <p class="card-text">{{this.postedAt}}</p>
-              <p class="card-text">{{this.duration}}</p>
+              <p class="card-text">{{this.duration}} | {{this.author}}</p>
               <p
                 class="card-text"
                 style="text-align: justify; height: 50px; overflow: hidden"
               >{{this.content}}</p>
             </div>
             <div class="ms-3 mb-3">
-              {{#if this.NodeJS}}
+              {{#if this.nodejs}}
                 <i class="fa-brands fa-node" style="color: #000000"></i>
               {{else}}
 
               {{/if}}
-              {{#if this.Golang}}
+              {{#if this.golang}}
                 <i class="fa-brands fa-golang" style="color: #000000;"></i>
               {{else}}
 
               {{/if}}
-              {{#if this.ReactJS}}
+              {{#if this.reactjs}}
                 <i class="fa-brands fa-react" style="color: #000000;"></i>
               {{else}}
 
               {{/if}}
-              {{#if this.Java}}
+              {{#if this.java}}
                 <i class="fa-brands fa-java" style="color: #000000;"></i>
               {{else}}
 
               {{/if}}
             </div>
             <div class="d-flex justify-content-center mb-3">
-              <a
-                href="/edit-project/{{this.id}}"
-                class="rounded-3 w-25 btn btn-secondary"
-              >Edit</a>
-              <a
-                href="/delete-project/{{this.id}}"
-                class="ms-1 rounded-3 w-25 btn btn-secondary"
-              >Delete</a>
+              {{#if isLogin}}
+                <a
+                  href="/edit-project/{{this.id}}"
+                  class="rounded-3 w-25 btn btn-secondary"
+                >Edit</a>
+                <a
+                  href="/delete-project/{{this.id}}"
+                  class="ms-1 rounded-3 w-25 btn btn-secondary"
+                >Delete</a>
+              {{/if}}
             </div>
           </div>
         </div>
